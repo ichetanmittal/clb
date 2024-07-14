@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrower Page</title>
+    <link rel="stylesheet" href="borrower.css">
+    <script type="module" src="firebase-init.js"></script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html"><img src="logo.png" alt="Logo" class="logo"></a>
+            <button class="nav-button" id="dashboard-button">Dashboard</button>
+        </div>
+        <div class="navbar-right" id="navbar-right">
+            <!-- Wallet and Profile buttons -->
+            <!-- <button class="nav-button">Wallet</button>
+            <button class="nav-button">Profile</button> -->
+            <a href="lender.html" class="nav-button">Switch to Lender</a>
+        </div>
+    </nav>
+
+    <div id="available-soon" class="available-soon hidden">Available Soon</div>
+
+    <div class="content">
+        <div class="form-container">
+            <h2>Borrow Money</h2>
+            <form id="borrow-form">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required>
+                <label for="days">Days:</label>
+                <input type="number" id="days" name="days" required>
+                <button type="submit" class="search-button">Search</button>
+            </form>
+        </div>
+        <div class="highlight-container">
+            <h2>Get Easy Loans</h2>
+            <p>Quick and easy loan approval process. Get the funds you need in no time.</p>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <div class="feature-box">
+            <h3>Flexible Borrowing Options</h3>
+            <p>Choose loan amounts and durations that suit your needs.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Competitive Interest Rates</h3>
+            <p>Benefit from competitive interest rates to save on borrowing costs.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Transparent Loan Terms</h3>
+            <p>Clear and transparent terms ensure you understand your borrowing commitments.</p>
+        </div>
+    </div>
+
+    <div class="mission-section">
+        <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>Financial literacy for all Indians, empowering individuals with the knowledge to make informed financial decisions.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Community Lending Platform. All rights reserved.</p>
+            <ul class="footer-nav">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="borrower.js"></script>
+    <script>
+        const isLoggedIn = false; // Set this flag based on the actual login status
+
+        const navbarRight = document.getElementById('navbar-right');
+
+        if (isLoggedIn) {
+            navbarRight.innerHTML += `
+                <button class="nav-button">Wallet</button>
+                <button class="nav-button">Profile</button>
+            `;
+        } else {
+            navbarRight.innerHTML += `
+                <button class="nav-button">Login</button>
+                <button class="nav-button">Sign Up</button>
+            `;
+        }
+    </script>
+</body>
+</html>

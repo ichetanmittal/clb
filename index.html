@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Lending Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="firebase-init.js"></script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html" class="logo">Logo</a>
+            <button class="nav-button" onclick="location.href='borrower.html'">Borrow</button>
+            <button class="nav-button" onclick="location.href='lender.html'">Lend</button>
+        </div>
+        <div class="navbar-right" id="navbar-right">
+            <!-- Dynamic login/signup buttons managed by script -->
+        </div>
+    </nav>
+    <div id="auth-container">
+        <form id="login-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <form id="signup-form">
+            <h2>Sign Up</h2>
+            <input type="text" id="new-username" placeholder="Email" required>
+            <input type="password" id="new-password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <header class="hero-section">
+        <h1>Welcome to Our Community Lending Platform</h1>
+        <p>Connecting borrowers and lenders seamlessly.</p>
+    </header>
+
+    <section class="info-section">
+        <h2>About Us</h2>
+        <p>We provide a platform where borrowers can get loans easily and lenders can earn interest by lending their money.</p>
+    </section>
+
+    <div class="features-section">
+        <div class="feature-box">
+            <h3>Convenient Loans</h3>
+            <p>Get loans with ease and minimal paperwork.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Earn Interest</h3>
+            <p>Lend your money and earn interest on it.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Secure Platform</h3>
+            <p>Transactions are safe and secure.</p>
+        </div>
+    </div>
+
+    <div class="mission-section">
+        <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>Financial literacy for all Indians, empowering individuals with the knowledge to make informed financial decisions.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Community Lending Platform. All rights reserved.</p>
+            <ul class="footer-nav">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- <script>
+        // Your JavaScript for login/signup management
+        const isLoggedIn = false; // Change this based on actual login state
+
+        const navbarRight = document.getElementById('navbar-right');
+
+        if (isLoggedIn) {
+            navbarRight.innerHTML = `
+                <button class="nav-button">Wallet</button>
+                <button class="nav-button">Profile</button>
+            `;
+        } else {
+            navbarRight.innerHTML = `
+                <button class="nav-button" id="login-btn">Login</button>
+                <button class="nav-button" id="signup-btn">Sign Up</button>
+            `;
+        }
+    </script> -->
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lender Page</title>
+    <link rel="stylesheet" href="lender.css">
+    <script type="module" src="firebase-init.js"></script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html"><img src="logo.png" alt="Logo" class="logo"></a>
+            <button class="nav-button" id="dashboard-button">Dashboard</button>
+        </div>
+        <div class="navbar-right" id="navbar-right">
+            <!-- Wallet and Profile buttons -->
+            <!-- <button class="nav-button">Wallet</button>
+            <button class="nav-button">Profile</button> -->
+            <a href="borrower.html" class="nav-button">Switch to Borrower</a>
+        </div>
+    </nav>
+
+    <div id="available-soon" class="available-soon hidden">Available Soon</div>
+
+    <div class="content">
+        <div class="form-container">
+            <h2>Submit Bid</h2>
+            <form id="bid-form">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" required>
+                <label for="interest">Interest Rate (%):</label>
+                <input type="number" id="interest" name="interest" step="0.01" required>
+                <label for="tenure">Tenure (days):</label>
+                <input type="number" id="tenure" name="tenure" required>
+                <button type="submit" class="submit-button">Submit Bid</button>
+            </form>
+        </div>
+        <div class="highlight-container">
+            <h2>Earn Interest with Ease</h2>
+            <p>Grow your savings by lending money at competitive interest rates.</p>
+        </div>
+    </div>
+
+    <div class="features-section">
+        <div class="feature-box">
+            <h3>Customizable Bid Options</h3>
+            <p>Set your own lending terms and conditions.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Earn Passive Income</h3>
+            <p>Generate income from lending activities with minimal effort.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Secure Lending Environment</h3>
+            <p>Rest assured with secure and reliable transactions.</p>
+        </div>
+    </div>
+
+    <div class="mission-section">
+        <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p>Financial literacy for all Indians, empowering individuals with the knowledge to make informed financial decisions.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Community Lending Platform. All rights reserved.</p>
+            <ul class="footer-nav">
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="lender.js"></script>
+    <script>
+        const isLoggedIn = false; // Set this flag based on the actual login status
+
+        const navbarRight = document.getElementById('navbar-right');
+
+        if (isLoggedIn) {
+            navbarRight.innerHTML += `
+                <button class="nav-button">Wallet</button>
+                <button class="nav-button">Profile</button>
+            `;
+        } else {
+            navbarRight.innerHTML += `
+                <button class="nav-button">Login</button>
+                <button class="nav-button">Sign Up</button>
+            `;
+        }
+    </script>
+</body>
+</html>
